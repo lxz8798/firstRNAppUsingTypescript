@@ -17,10 +17,12 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+// export default class App extends Component<Props>
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <HeaderText>这里是测试</HeaderText>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
@@ -29,7 +31,20 @@ export default class App extends Component<Props> {
   }
 }
 
+export class HeaderText extends Component {
+  render() {
+    return (
+      <Text style={styles.itemText}>
+        {this.props.children}
+      </Text>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
+  itemText: {
+    color: 'red'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
